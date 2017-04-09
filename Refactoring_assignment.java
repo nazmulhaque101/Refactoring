@@ -1,3 +1,4 @@
+
 import java.util.Enumeration;
 
 public class Refactoring {
@@ -10,22 +11,26 @@ public class Refactoring {
 		double outstanding = 0.0;
 		
 		//print banner
-		
 		print_banner();
 		
 		// calculate outstanding
-		while(e.hasMoreElements())
-		{
-			Order each = (Order) e.nextElement();
-			outstanding += each.getAmount();
-			
-		}
+		outstanding = calculate_outstanding(e, outstanding);
 		
 		// print details 
 		
 		System.out.println("name: " + name);
 		System.out.println("amount: " + outstanding);
 
+	}
+
+	private double calculate_outstanding(Enumeration<E> e, double outstanding) {
+		while(e.hasMoreElements())
+		{
+			Order each = (Order) e.nextElement();
+			outstanding += each.getAmount();
+			
+		}
+		return outstanding;
 	}
 
 	private void print_banner() {
