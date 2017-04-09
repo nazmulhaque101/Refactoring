@@ -1,4 +1,3 @@
-
 import java.util.Enumeration;
 
 public class Refactoring {
@@ -18,9 +17,13 @@ public class Refactoring {
 		
 		// print details 
 		
+		print_details(outstanding);
+
+	}
+
+	private void print_details(double outstanding) {
 		System.out.println("name: " + name);
 		System.out.println("amount: " + outstanding);
-
 	}
 
 	private double calculate_outstanding(Enumeration<E> e, double outstanding) {
